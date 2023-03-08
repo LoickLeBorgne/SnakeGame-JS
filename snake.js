@@ -70,7 +70,7 @@ window.onload = function () {
         img.onload = function () {
             ctx.drawImage(img, centreX - 50, 450);
         };
-        ctx.fillText("M3K LES GARS",centreX, canvasHeight - 180);
+        ctx.fillText("M3K LES GARS, BEST SCORE : 77",centreX, canvasHeight - 180);
         img.src = 'gab.PNG';
         ctx.restore();
     }
