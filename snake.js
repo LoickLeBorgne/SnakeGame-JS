@@ -21,7 +21,7 @@ window.onload = function () {
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
         canvas.style.border = "30px solid grey";
-        canvas.style.margin = "50px auto";
+        canvas.style.margin = "20px auto";
         canvas.style.display = "block";
         canvas.style.backgroundColor = "black";
         document.body.appendChild(canvas);
