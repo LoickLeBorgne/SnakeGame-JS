@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Creepster, sans-serif;
+    text-align: center;
+    background-color: #949393cc;
+    overflow-y: hidden;
+}
+
+h1{
+    color: green;
+    font-size: 70px;
+}
+
+h2, .yellow{
+    color: rgb(196, 196, 17);
+    font-size: 50px;
+    letter-spacing: 1rem;
+}
