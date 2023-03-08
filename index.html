@@ -15,33 +15,6 @@
 </head>
 <body>
     <h1>Jeu du serpent</h1>
-    <ul>
-        <h2>Si t'es fort, ne coupe pas la musique....</h2>
-        <li>
-          <a><i class="fa fa-play" aria-hidden="true" id="playBtn"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-stop" aria-hidden="true" id="stopBtn"></i></a>
-        </li>
-      </ul>
-    
-	<script>
-        var source = "music.mp3";
-var audio = new Audio(); 
-audio.addEventListener("load", function() {
-  audio.play();
-}, true);
-audio.src = source;
-audio.autoplay = true;
-
-$("#playBtn").click(function() {
-  audio.play();
-});
-
-$("#stopBtn").click(function() {
-  audio.pause();
-  audio.currentTime = 0;
-});
-    </script>
+  
 </body>
 </html>

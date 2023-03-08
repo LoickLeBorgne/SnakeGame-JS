@@ -65,6 +65,7 @@ window.onload = function () {
     }
 
     function gameOver() {
+        jumpScare();
         ctx.save();
         ctx.font = "50px Creepster, sans-serif";
         var centreX = canvasWidth / 2;
@@ -81,7 +82,6 @@ window.onload = function () {
         ctx.fillText("M3K LES GARS, BEST SCORE : 77", centreX, centreY);
         img.src = '20.jpg';
         ctx.restore();
-        jumpScare();
     }
     function restart() {
         score = 0;
