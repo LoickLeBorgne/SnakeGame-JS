@@ -11,12 +11,22 @@ window.onload = function () {
     var score;
     var timeout;
     let img = new Image();
-    img.src = '20.jpg';
+    img.src = 'gab.PNG';
+    let audio = new Audio('music.mp3');
+
+    function jumpScare(){
+        scareJump = new Audio('scare.mp3');
+        scareJump.play();
+    }
+    function stopMusic() {
+        audio.pause();
+      }
 
     init();
 
     function init() {
-        
+        audio = new Audio('music.mp3');
+        audio.play();
         var canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
@@ -36,10 +46,9 @@ window.onload = function () {
 
         snakee.advance();
         if (snakee.checkCollision()) {
-
             gameOver();
             jumpScare();
-
+            stopMusic();
         }
         else {
             if (snakee.isEatingApple(applee)) {
@@ -58,14 +67,7 @@ window.onload = function () {
         }
 
     }
-
-    function jumpScare(){
-        audio.src = 'scare.mp3';
-        audio.play();
-    }
-
     function gameOver() {
-        jumpScare();
         ctx.save();
         ctx.font = "50px Creepster, sans-serif";
         var centreX = canvasWidth / 2;
@@ -76,10 +78,11 @@ window.onload = function () {
         ctx.fillText("Appuyer sur la touche Espace pour rejouer", centreX, centreY - 180);
         ctx.fillText("Perdu !", centreX, centreY - 260);
         let img = new Image();
+        
         img.onload = function () {
-            ctx.drawImage(img, centreX -400, centreY -380);
+            ctx.drawImage(img, 20, -200);
         };
-        ctx.fillText("M3K LES GARS, BEST SCORE : 77", centreX, centreY);
+        ctx.fillText("M3K LES GARS, BEST SCORE : 77", centreX, canvasHeight - 180);
         img.src = '20.jpg';
         ctx.restore();
     }
@@ -258,4 +261,5 @@ window.onload = function () {
         }
         snakee.setDirection(newDirection);
     }
-}
+
+};
