@@ -3,7 +3,7 @@ window.onload = function () {
     var canvasHeight = 600;
     var blockSize = 30;
     var ctx;
-    var delay = 10;
+    var delay = 100;
     var snakee;
     var applee;
     var widthInBlocks = canvasWidth / blockSize;
