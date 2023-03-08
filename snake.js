@@ -3,7 +3,7 @@ window.onload = function () {
     var canvasHeight = 600;
     var blockSize = 30;
     var ctx;
-    var delay = 100;
+    var delay = 10;
     var snakee;
     var applee;
     var widthInBlocks = canvasWidth / blockSize;
@@ -70,6 +70,7 @@ window.onload = function () {
         img.onload = function () {
             ctx.drawImage(img, centreX - 50, 450);
         };
+        ctx.fillText("M3K LES GARS",centreX, canvasHeight - 180);
         img.src = 'gab.PNG';
         ctx.restore();
     }
