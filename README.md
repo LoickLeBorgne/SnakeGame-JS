@@ -7,6 +7,7 @@ Snake Game | Jeu du serpent in HTML CSS / JAVASCRIPT
 
 - [@RikuuDev](https://github.com/LoickLeBorgne)
 
+https://loickleborgne.github.io/SnakeGame-JS/anothersnake.html
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://loickleborgne.github.io/new-portfolio/)
