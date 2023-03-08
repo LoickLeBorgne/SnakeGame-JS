@@ -11,12 +11,12 @@ window.onload = function () {
     var score;
     var timeout;
     let img = new Image();
-    img.src = 'gab.PNG'
-
+    img.src = 'gab.PNG';
 
     init();
 
     function init() {
+        
         var canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
@@ -36,6 +36,7 @@ window.onload = function () {
 
         snakee.advance();
         if (snakee.checkCollision()) {
+
             gameOver();
 
         }
@@ -70,7 +71,7 @@ window.onload = function () {
         img.onload = function () {
             ctx.drawImage(img, centreX - 50, 450);
         };
-        ctx.fillText("M3K LES GARS, BEST SCORE : 77",centreX, canvasHeight - 180);
+        ctx.fillText("M3K LES GARS, BEST SCORE : 77", centreX, canvasHeight - 180);
         img.src = 'gab.PNG';
         ctx.restore();
     }

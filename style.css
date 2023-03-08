@@ -9,15 +9,41 @@ body{
     height: 100vh;
 }
 
+ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+ul li{
+    margin: 0 15px;
+}
+
+.fa {
+    cursor: pointer;
+    color: red;
+    transition: .35s;
+}
+
+.fa:hover{
+    color: black;
+}
+
+.fa-play{
+    font-size: 30px !important;
+}
+
+.fa-stop{
+    font-size: 30px !important;
+}
+
 h1{
     color: green;
-    font-size: 70px;
+    font-size: 40px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
-h2, .yellow{
-    color: rgb(196, 196, 17);
-    font-size: 50px;
-    letter-spacing: 1rem;
-}
