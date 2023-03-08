@@ -3,13 +3,15 @@ window.onload = function () {
     var canvasHeight = 600;
     var blockSize = 30;
     var ctx;
-    var delay = 80;
+    var delay = 100;
     var snakee;
     var applee;
     var widthInBlocks = canvasWidth / blockSize;
     var heightInBlocks = canvasHeight / blockSize;
     var score;
     var timeout;
+    let img = new Image();
+    img.src = 'gab.PNG'
 
 
     init();
@@ -33,21 +35,18 @@ window.onload = function () {
     function refreshCanvas() {
 
         snakee.advance();
-        if (snakee.checkCollision()) 
-        {
-                gameOver();
+        if (snakee.checkCollision()) {
+            gameOver();
 
         }
         else {
-            if (snakee.isEatingApple(applee)) 
-            {
+            if (snakee.isEatingApple(applee)) {
                 score++;
                 snakee.ateApple = true;
-                do
-                {
+                do {
                     applee.setNewPosition();
                 }
-                while(applee.isOnSnake(snakee))
+                while (applee.isOnSnake(snakee))
             }
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             drawScore();
@@ -57,36 +56,39 @@ window.onload = function () {
         }
 
     }
-    function gameOver()
-    {
+    function gameOver() {
         ctx.save();
         ctx.font = "50px Creepster, sans-serif";
-        var centreX = canvasWidth/2;
-        var centreY = canvasHeight/2;
+        var centreX = canvasWidth / 2;
+        var centreY = canvasHeight / 2;
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText("Appuyer sur la touche Espace pour rejouer",centreX, centreY - 180);
-        ctx.fillText("Perdu !",centreX, centreY -260) ;
+        ctx.fillText("Appuyer sur la touche Espace pour rejouer", centreX, centreY - 180);
+        ctx.fillText("Perdu !", centreX, centreY - 260);
+        let img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, centreX - 50, 450);
+        };
+        img.src = 'gab.PNG';
         ctx.restore();
     }
-    function restart()
-    {
+    function restart() {
         score = 0;
         snakee = new Snake([[6, 4], [5, 4], [4, 4]], "right");
         applee = new Apple([10, 10]);
         clearTimeout(timeout);
         refreshCanvas();
     }
-    function drawScore()
-    {
+    function drawScore() {
         ctx.save();
         ctx.font = "200px Creepster, sans-serif";
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        var centreX = canvasWidth/2;
-        var centreY = canvasHeight/2;
+        var centreX = canvasWidth / 2;
+        var centreY = canvasHeight / 2;
+
         ctx.fillText(score.toString(), centreX, centreY);
         ctx.restore();
     }
@@ -127,10 +129,9 @@ window.onload = function () {
                     throw ("Invalid Direction");
             }
             this.body.unshift(nextPosition);
-            if(!this.ateApple)
-               this.body.pop();
-            else
-            {
+            if (!this.ateApple)
+                this.body.pop();
+            else {
                 this.ateApple = false;
             }
         };
